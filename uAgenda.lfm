@@ -1,0 +1,224 @@
+object frmAgenda: TfrmAgenda
+  Left = 1053
+  Height = 535
+  Top = 379
+  Width = 863
+  Caption = 'frmAgenda'
+  ClientHeight = 535
+  ClientWidth = 863
+  DesignTimePPI = 120
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -20
+  Font.Name = 'Franklin Gothic Medium Cond'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '3.2.0.0'
+  object Panel1: TPanel
+    Left = -8
+    Height = 63
+    Top = 0
+    Width = 879
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Registro de consultas'
+    Color = clTeal
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Britannic Bold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 25
+    Top = 80
+    Width = 74
+    Caption = 'Nutriólogo'
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 25
+    Top = 160
+    Width = 63
+    Caption = 'Paciente'
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 25
+    Top = 320
+    Width = 44
+    Caption = 'Fecha'
+  end
+  object dtpFecha: TDateEdit
+    Left = 16
+    Height = 33
+    Top = 352
+    Width = 201
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OnAcceptDate = dtpFechaAcceptDate
+    DateOrder = doNone
+    ButtonWidth = 29
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 1
+    Text = 'dtpFecha'
+  end
+  object tmpHoraIn: TTimeEdit
+    Left = 17
+    Height = 33
+    Top = 432
+    Width = 129
+    DefaultNow = True
+    OnAcceptTime = tmpHoraInAcceptTime
+    ButtonWidth = 29
+    DirectInput = False
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 2
+    Text = 'tmpHoraIn'
+  end
+  object Label4: TLabel
+    Left = 17
+    Height = 25
+    Top = 400
+    Width = 76
+    Caption = 'Hora inicio'
+  end
+  object btnAgregar: TButton
+    Left = 16
+    Height = 31
+    Top = 480
+    Width = 279
+    Caption = 'Agregar'
+    TabOrder = 3
+    OnClick = btnAgregarClick
+  end
+  object Label5: TLabel
+    Left = 17
+    Height = 25
+    Top = 240
+    Width = 82
+    Caption = 'Consultorio'
+  end
+  object lvConsultas: TListView
+    Left = 312
+    Height = 440
+    Top = 80
+    Width = 536
+    Columns = <    
+      item
+        Caption = 'Fecha'
+        Width = 120
+      end    
+      item
+        Caption = 'Rango de hora'
+        Width = 150
+      end    
+      item
+        Caption = 'Consultorio'
+        Width = 130
+      end    
+      item
+        Caption = 'Nutriólogo'
+        Width = 125
+      end>
+    TabOrder = 4
+    ViewStyle = vsReport
+  end
+  object Label6: TLabel
+    Left = 168
+    Height = 25
+    Top = 400
+    Width = 69
+    Caption = 'Hora final'
+  end
+  object tmpHoraFin: TTimeEdit
+    Left = 168
+    Height = 33
+    Top = 432
+    Width = 129
+    OnAcceptTime = tmpHoraFinAcceptTime
+    ButtonWidth = 29
+    NumGlyphs = 1
+    MaxLength = 0
+    OnChange = tmpHoraFinChange
+    TabOrder = 5
+    Text = 'tmpHoraFin'
+  end
+  object cmbNutri: TComboBox
+    Left = 17
+    Height = 33
+    Top = 112
+    Width = 280
+    ItemHeight = 25
+    TabOrder = 6
+  end
+  object cmbPaciente: TComboBox
+    Left = 16
+    Height = 33
+    Top = 192
+    Width = 281
+    ItemHeight = 25
+    TabOrder = 7
+  end
+  object cmbConsultorio: TComboBox
+    Left = 16
+    Height = 33
+    Top = 272
+    Width = 281
+    ItemHeight = 25
+    TabOrder = 8
+  end
+  object MySQL57Connection1: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    SkipLibraryVersionCheck = False
+    Left = 103
+    Top = 67
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 145
+    Top = 63
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    Macros = <>
+    Left = 190
+    Top = 66
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL57Connection1
+    Left = 233
+    Top = 64
+  end
+  object PopupNotifier1: TPopupNotifier
+    Color = clInfoBk
+    Icon.Data = {
+      07544269746D617000000000
+    }
+    Text = 'Text'
+    TextFont.Color = clInfoText
+    TextFont.Height = -15
+    Title = 'Advertencia'
+    TitleFont.Color = clInfoText
+    TitleFont.Height = -15
+    TitleFont.Style = [fsBold]
+    Visible = False
+    Left = 237
+    Top = 71
+  end
+end
