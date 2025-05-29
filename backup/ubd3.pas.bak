@@ -1,0 +1,348 @@
+unit uBd3;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, mysql80conn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, DBCtrls, PReport, list;
+
+type
+
+  { TForm1 }
+
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    buttonExport: TButton;
+    buttonMod: TButton;
+    Button9: TButton;
+    DataSource1: TDataSource;
+    eDBEmail: TDBEdit;
+    eDBEdad: TDBEdit;
+    eDBApellido: TDBEdit;
+    eDBNombre: TDBEdit;
+    impresora: TPReport;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    lblConectar: TLabel;
+    Connection: TMySQL80Connection;
+    PRLabel1: TPRLabel;
+    panelReport: TPRLayoutPanel;
+    PRLabel2: TPRLabel;
+    PRLabel3: TPRLabel;
+    PRLabel4: TPRLabel;
+    PRLabel5: TPRLabel;
+    PRPage1: TPRPage;
+    PRRect1: TPRRect;
+    Query: TSQLQuery;
+    Transacion: TSQLTransaction;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure buttonExportClick(Sender: TObject);
+    procedure buttonModClick(Sender: TObject);
+    procedure dChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormCreate(Sender: TObject);
+    procedure nRegistros();
+    function obNumero():Integer;
+  private
+
+  public
+   procedure conectarBD;
+   procedure createColumnName(nombre : string; x, y : integer);
+   procedure createColumnSecondName(secondName : string; x, y : integer);
+   procedure createColumnEmail(email : string; x, y : integer);
+   procedure createColumnAge(age, x, y : integer);
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+function TForm1.obNumero():Integer;
+var
+  numRegActual:Integer;
+  begin
+    Query.Last;
+    numRegActual:=Query.RecNo;
+    Result:=numRegActual;
+  end;
+
+procedure TForm1.dChange(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+   Connection.Close();
+end;
+
+procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+    Query.Close;
+    CanClose:=True;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  conectarBD;
+
+  Query.DataBase:=Connection;
+  Query.UsePrimaryKeyAsKey:=False;
+  Query.SQL.Text:='Select * from alumnos';
+  DataSource1.DataSet:=Query;
+  if Connection.Connected then
+  begin
+    lblConectar.Caption:='Conectada';
+  end;
+    Query.Open;
+    eDBNombre.DataField:='nombre';
+    eDBNombre.DataSource:=DataSource1;
+    eDBApellido.DataField:='apellido';
+    eDBApellido.DataSource:=DataSource1;
+    eDBEmail.DataField:='email';
+    eDBEmail.DataSource:=DataSource1;
+    eDBEdad.DataField:='Edad';
+    eDBEdad.DataSource:=DataSource1;
+
+    nRegistros;
+
+end;
+procedure TForm1.conectarBD;
+begin
+  Connection.HostName:='localhost';
+  Connection.Password:='root';
+  Connection.Port:=3306;
+  Connection.DatabaseName:='ProgramacionVisual';
+  Connection.UserName:='root';
+  Connection.Connected:=True;
+  Connection.KeepConnection:=True;
+
+  Transacion.DataBase:=Connection;
+  Transacion.Action:=caCommit;
+  Transacion.Active:=True;
+end;
+
+procedure TForm1.createColumnName(nombre: string; x, y: integer);
+var
+  labelName : TPRLabel;
+begin
+  labelName := TPRLabel.Create(nil);
+
+  with labelName do
+  begin
+    Parent := panelReport;
+    left := x;
+    Top:= y;
+
+    Caption:=nombre;
+  end;
+end;
+
+procedure TForm1.createColumnSecondName(secondName: string; x, y: integer);
+var
+  labelSecondName : TPRLabel;
+begin
+  labelSecondName := TPRLabel.Create(nil);
+
+  with labelSecondName do
+  begin
+    Parent := panelReport;
+    left := x;
+    Top:= y;
+
+    Caption:=secondName;
+  end;
+end;
+
+procedure TForm1.createColumnEmail(email: string; x, y: integer);
+var
+  labelEmail : TPRLabel;
+begin
+  labelEmail := TPRLabel.Create(nil);
+
+  with labelEmail do
+  begin
+    Parent := panelReport;
+    left := x;
+    Top:= y;
+
+    Caption:=email;
+  end;
+
+end;
+
+procedure TForm1.createColumnAge(age, x, y: integer);
+var
+  labelAge : TPRLabel;
+begin
+  labelAge := TPRLabel.Create(nil);
+
+  with labelAge do
+  begin
+    Parent := panelReport;
+    left := x;
+    Top:= y;
+
+    Caption:=IntToStr(age);
+  end;
+
+end;
+
+procedure TForm1.nRegistros();
+var
+  i:Integer;
+  begin
+    i:=Query.RecNo;
+  end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+  numReg:Integer;
+begin
+    if Button6.Caption='Altas' then
+    begin
+      numReg:=obNumero;
+      Query.Open;
+      Query.Insert;
+      Button6.Caption:='Guardar';
+      Exit
+
+    end
+    else
+    begin
+      Query.Post;
+      Query.ApplyUpdates;
+      Button6.Caption:='Altas';
+      Query.Refresh;
+      nRegistros;
+    end;
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  if Query.RecordCount>0 then
+  begin
+    Query.Delete;
+    Query.UpdateMode:=upWhereAll;
+    Query.ApplyUpdates;
+    Query.Close;
+    Query.Open;
+    nRegistros();
+  end;
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);
+begin
+  frmList.ShowModal;
+end;
+
+procedure TForm1.buttonExportClick(Sender: TObject);
+var
+  relativeY : integer;
+begin
+
+
+  relativeY:=120;
+
+  Query.First;
+  while not Query.EOF do
+  begin
+
+    relativeY += 40;
+    createColumnName(Query.FieldByName('nombre').AsString, 40, relativeY);
+    createColumnSecondName(Query.FieldByName('apellido').AsString, 192, relativeY);
+    createColumnAge(Query.FieldByName('edad').AsInteger, 508, relativeY);
+    createColumnEmail(Query.FieldByName('email').AsString, 352, relativeY);
+
+    Query.Next;
+  end;
+
+  impresora.FileName:='Reporte de presonas.pdf';
+  impresora.BeginDoc;
+  impresora.Print(PRPage1);
+  impresora.EndDoc;
+
+  ShowMessage('Reporte generado!');
+end;
+
+procedure TForm1.buttonModClick(Sender: TObject);
+begin
+  if buttonMod.Caption = 'Modificar' then
+  begin
+    Query.Open;
+    Query.Edit;
+
+    buttonMod.Caption:='Guardar';
+  end
+  else
+  begin
+    Query.Post;
+    Query.UpdateMode:=upWhereAll;
+    Query.ApplyUpdates;
+    buttonMod.Caption:='Modificar';
+
+    Query.Refresh;
+    nRegistros();
+
+    ShowMessage('Registro actualizado');
+
+  end;
+
+end;
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Query.First;
+  nRegistros();
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Query.Prior;
+  nRegistros();
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Query.Next;
+  nRegistros();
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  Query.Last;
+  nRegistros();
+end;
+
+
+end.
+

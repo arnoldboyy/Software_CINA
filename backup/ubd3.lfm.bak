@@ -1,0 +1,301 @@
+object Form1: TForm1
+  Left = 990
+  Height = 795
+  Top = 190
+  Width = 605
+  Caption = 'Base de datos'
+  ClientHeight = 795
+  ClientWidth = 605
+  Color = clGradientActiveCaption
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  LCLVersion = '3.2.0.0'
+  object Button1: TButton
+    Left = 48
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Primero'
+    Color = clNavy
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 136
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Anterior'
+    Color = clNavy
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 224
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Siguiente'
+    Color = clNavy
+    TabOrder = 2
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 312
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Ultimo'
+    Color = clNavy
+    TabOrder = 3
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 224
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'Salir'
+    TabOrder = 4
+    OnClick = Button5Click
+  end
+  object Label2: TLabel
+    Left = 40
+    Height = 15
+    Top = 24
+    Width = 47
+    Caption = 'Nombre:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 40
+    Height = 15
+    Top = 56
+    Width = 47
+    Caption = 'Apellido:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 40
+    Height = 15
+    Top = 96
+    Width = 29
+    Caption = 'Email'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 40
+    Height = 15
+    Top = 128
+    Width = 26
+    Caption = 'Edad'
+    Color = clNavy
+    ParentColor = False
+  end
+  object lblConectar: TLabel
+    Left = 312
+    Height = 15
+    Top = 288
+    Width = 70
+    Caption = 'Sin Conexion'
+  end
+  object eDBNombre: TDBEdit
+    Left = 99
+    Height = 23
+    Top = 24
+    Width = 301
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object eDBApellido: TDBEdit
+    Left = 96
+    Height = 23
+    Top = 56
+    Width = 304
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object eDBEdad: TDBEdit
+    Left = 99
+    Height = 23
+    Top = 120
+    Width = 301
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object eDBEmail: TDBEdit
+    Left = 96
+    Height = 23
+    Top = 88
+    Width = 304
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object Button6: TButton
+    Left = 48
+    Height = 25
+    Top = 216
+    Width = 75
+    Caption = 'Altas'
+    Color = clNavy
+    TabOrder = 9
+    OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 136
+    Height = 25
+    Top = 216
+    Width = 75
+    Caption = 'Eliminar'
+    Color = clNavy
+    TabOrder = 10
+    OnClick = Button7Click
+  end
+  object buttonMod: TButton
+    Left = 224
+    Height = 25
+    Top = 216
+    Width = 75
+    Caption = 'Modificar'
+    Color = clNavy
+    TabOrder = 11
+    OnClick = buttonModClick
+  end
+  object Button9: TButton
+    Left = 312
+    Height = 25
+    Top = 216
+    Width = 75
+    Caption = 'Buscar'
+    Color = clNavy
+    TabOrder = 12
+    OnClick = Button9Click
+  end
+  object buttonExport: TButton
+    Left = 136
+    Height = 25
+    Top = 251
+    Width = 72
+    Caption = 'Exportar'
+    Color = clNavy
+    TabOrder = 13
+    OnClick = buttonExportClick
+  end
+  object PRPage1: TPRPage
+    Left = 48
+    Height = 600
+    Top = 360
+    Width = 600
+    MarginTop = 32
+    MarginLeft = 32
+    MarginRight = 32
+    MarginBottom = 32
+    Visible = False
+    object panelReport: TPRLayoutPanel
+      Left = 33
+      Height = 534
+      Top = 33
+      Width = 534
+      Align = alClient
+      object PRLabel1: TPRLabel
+        Left = 11
+        Height = 30
+        Top = 37
+        Width = 361
+        FontColor = clBlue
+        FontName = fnArial
+        FontSize = 28
+        Caption = 'REPORTES'
+        Alignment = taCenter
+      end
+      object PRLabel2: TPRLabel
+        Left = 32
+        Height = 30
+        Top = 80
+        Width = 100
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Nombre'
+      end
+      object PRLabel3: TPRLabel
+        Left = 128
+        Height = 30
+        Top = 80
+        Width = 100
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Apellido'
+      end
+      object PRLabel4: TPRLabel
+        Left = 235
+        Height = 30
+        Top = 80
+        Width = 53
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Email'
+      end
+      object PRLabel5: TPRLabel
+        Left = 339
+        Height = 30
+        Top = 80
+        Width = 43
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Edad'
+      end
+      object PRRect1: TPRRect
+        Left = 8
+        Height = 21
+        Top = 80
+        Width = 429
+        LineColor = clNavy
+        LineStyle = psinsideFrame
+      end
+    end
+  end
+  object Connection: TMySQL80Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 472
+    Top = 216
+  end
+  object Transacion: TSQLTransaction
+    Active = False
+    Left = 464
+    Top = 280
+  end
+  object DataSource1: TDataSource
+    Left = 472
+    Top = 144
+  end
+  object Query: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 472
+    Top = 72
+  end
+  object impresora: TPReport
+    FileName = 'default.pdf'
+    CreationDate = 45402.8013989352
+    UseOutlines = False
+    ViewerPreference = []
+    Left = 520
+    Top = 272
+  end
+end

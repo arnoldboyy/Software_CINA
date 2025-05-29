@@ -1,0 +1,356 @@
+object frmNutriologos: TfrmNutriologos
+  Left = 576
+  Height = 750
+  Top = 146
+  Width = 981
+  Caption = 'Nutriologos'
+  ClientHeight = 750
+  ClientWidth = 981
+  Color = clSilver
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '3.2.0.0'
+  object btnPrimero: TButton
+    Left = 120
+    Height = 31
+    Top = 560
+    Width = 154
+    Caption = 'Primer Nutriologo'
+    Color = clNavy
+    TabOrder = 0
+    OnClick = btnPrimeroClick
+  end
+  object btnAnterior: TButton
+    Left = 352
+    Height = 31
+    Top = 560
+    Width = 94
+    Caption = 'Anterior'
+    Color = clNavy
+    TabOrder = 1
+    OnClick = btnAnteriorClick
+  end
+  object btnSiguiente: TButton
+    Left = 472
+    Height = 31
+    Top = 560
+    Width = 94
+    Caption = 'Siguiente'
+    Color = clNavy
+    TabOrder = 2
+    OnClick = btnSiguienteClick
+  end
+  object btnUltimo: TButton
+    Left = 616
+    Height = 31
+    Top = 560
+    Width = 154
+    Caption = 'Ultimo Nutriologo'
+    Color = clNavy
+    TabOrder = 3
+    OnClick = btnUltimoClick
+  end
+  object btnSalir: TButton
+    Left = 334
+    Height = 31
+    Top = 640
+    Width = 94
+    Caption = 'Salir'
+    TabOrder = 4
+    OnClick = btnSalirClick
+  end
+  object Label2: TLabel
+    Left = 152
+    Height = 20
+    Top = 296
+    Width = 65
+    Caption = 'Matricula:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 152
+    Height = 20
+    Top = 336
+    Width = 58
+    Caption = 'Nombre:'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 152
+    Height = 20
+    Top = 386
+    Width = 41
+    Caption = 'Grupo'
+    Color = clNavy
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 152
+    Height = 20
+    Top = 426
+    Width = 34
+    Caption = 'Edad'
+    Color = clNavy
+    ParentColor = False
+  end
+  object lblConectar: TLabel
+    Left = 770
+    Height = 20
+    Top = 90
+    Width = 86
+    Caption = 'Sin Conexion'
+  end
+  object eDBMatricula: TDBEdit
+    Left = 216
+    Height = 28
+    Top = 296
+    Width = 376
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 5
+    OnChange = eDBMatriculaChange
+  end
+  object eDBNombre: TDBEdit
+    Left = 214
+    Height = 28
+    Top = 336
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object eDBEdad: TDBEdit
+    Left = 216
+    Height = 28
+    Top = 416
+    Width = 376
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object eDBGrupo: TDBEdit
+    Left = 212
+    Height = 28
+    Top = 376
+    Width = 380
+    Color = clInactiveCaption
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object PRPage1: TPRPage
+    Left = 88
+    Height = 750
+    Top = 536
+    Width = 750
+    MarginTop = 32
+    MarginLeft = 32
+    MarginRight = 32
+    MarginBottom = 32
+    Visible = False
+    object panelReport: TPRLayoutPanel
+      Left = 33
+      Height = 684
+      Top = 33
+      Width = 684
+      Align = alClient
+      object PRLabel1: TPRLabel
+        Left = 96
+        Height = 38
+        Top = 24
+        Width = 451
+        FontName = fnArial
+        FontSize = 28
+        Caption = 'LISTA DE NUTRIOLOGOS'
+        Alignment = taCenter
+      end
+      object PRLabel2: TPRLabel
+        Left = 40
+        Height = 38
+        Top = 100
+        Width = 125
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Matricula'
+      end
+      object PRLabel3: TPRLabel
+        Left = 160
+        Height = 38
+        Top = 100
+        Width = 125
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Nombre'
+      end
+      object PRLabel4: TPRLabel
+        Left = 294
+        Height = 38
+        Top = 100
+        Width = 66
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Edad'
+      end
+      object PRLabel5: TPRLabel
+        Left = 424
+        Height = 38
+        Top = 100
+        Width = 54
+        FontColor = clNavy
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Grupo'
+      end
+      object PRRect1: TPRRect
+        Left = 8
+        Height = 26
+        Top = 96
+        Width = 557
+        LineColor = clNavy
+        LineStyle = psinsideFrame
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = -16
+    Height = 72
+    Top = 0
+    Width = 1008
+    Caption = 'NUTRIOLOGOS'
+    Color = 6382365
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -57
+    Font.Name = 'Impact'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 10
+  end
+  object Buscar: TPanel
+    Left = 88
+    Height = 42
+    Top = 218
+    Width = 152
+    Caption = 'Buscar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 11
+    OnClick = BuscarClick
+  end
+  object Altas: TPanel
+    Left = 278
+    Height = 44
+    Top = 217
+    Width = 172
+    Caption = 'Nuevo'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 12
+    OnClick = AltasClick
+  end
+  object Panel1: TPanel
+    Left = 498
+    Height = 45
+    Top = 216
+    Width = 168
+    Caption = 'Modificar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 13
+    OnClick = Panel1Click
+  end
+  object Panel3: TPanel
+    Left = 738
+    Height = 42
+    Top = 217
+    Width = 165
+    Caption = 'Eliminar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 14
+    OnClick = Panel3Click
+  end
+  object Panel5: TPanel
+    Left = 670
+    Height = 40
+    Top = 300
+    Width = 162
+    Caption = 'Exportar'
+    Color = clRed
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 15
+    OnClick = Panel5Click
+  end
+  object Connection: TMySQL80Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 920
+    Top = 430
+  end
+  object Transacion: TSQLTransaction
+    Active = False
+    Left = 920
+    Top = 600
+  end
+  object DataSource1: TDataSource
+    DataSet = Query
+    Left = 920
+    Top = 270
+  end
+  object Query: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 920
+    Top = 350
+  end
+  object impresora: TPReport
+    FileName = 'default.pdf'
+    CreationDate = 45402.8013989352
+    UseOutlines = False
+    ViewerPreference = []
+    Left = 920
+    Top = 520
+  end
+end

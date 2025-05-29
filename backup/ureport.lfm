@@ -1,0 +1,48 @@
+object frmReport: TfrmReport
+  Left = 534
+  Height = 876
+  Top = 221
+  Width = 821
+  Caption = 'Reporte'
+  ClientHeight = 876
+  ClientWidth = 821
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  LCLVersion = '3.2.0.0'
+  object PRPage1: TPRPage
+    Left = 24
+    Height = 825
+    Top = 24
+    Width = 638
+    MarginTop = 32
+    MarginLeft = 32
+    MarginRight = 32
+    MarginBottom = 32
+    object PRLayoutPanel1: TPRLayoutPanel
+      Left = 33
+      Height = 759
+      Top = 33
+      Width = 572
+      Align = alClient
+      object PRLabel1: TPRLabel
+        Left = 16
+        Height = 45
+        Top = 56
+        Width = 542
+        FontName = fnArial
+        FontSize = 30
+        CharSpace = 5
+        Caption = 'Reporte de personas'
+        Alignment = taCenter
+      end
+    end
+  end
+  object impresora: TPReport
+    FileName = 'default.pdf'
+    CreationDate = 45402.8013989352
+    UseOutlines = False
+    ViewerPreference = []
+    Left = 720
+    Top = 128
+  end
+end
