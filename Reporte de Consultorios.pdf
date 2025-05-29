@@ -1,0 +1,159 @@
+%PDF-1.2 
+1 0 obj
+<<
+/Type /Catalog
+/Pages 3 0 R
+/PageMode /UseNone
+/PageLayout /SinglePage
+>>
+endobj
+2 0 obj
+<<
+/Producer (PowerPdf version 0.9)
+/Author ()
+/CreationDate (D:20240623151500)
+/Creator ()
+/Keywords ()
+/Subject ()
+/Title ()
+/ModDate (D:20240623151500)
+>>
+endobj
+3 0 obj
+<<
+/Type /Pages
+/Kids [4 0 R ]
+/Count 1
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Parent 3 0 R
+/MediaBox [0 0 750 750 ]
+/Resources <<
+/Font <<
+/F0 6 0 R
+>>
+/XObject <<
+>>
+/ProcSet [/PDF /Text /ImageC ]
+>>
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 750
+/Filter []
+>>
+stream
+/F0 10 Tf
+/F0 28 Tf
+0 0 0 rg
+BT
+176 661.2 Td
+(LISTA DE CONSULTORIOS) Tj
+ET
+/F0 13 Tf
+0 0 0 rg
+BT
+73 605.95 Td
+(NombreAula) Tj
+ET
+0 0 0 rg
+BT
+193 605.95 Td
+(Ubicacion) Tj
+ET
+0 0 0 rg
+BT
+393 605.95 Td
+(Nota) Tj
+ET
+[] 0 d
+65 621 m
+600 621 l
+600 596 l
+65 596 l
+0 0 0 RG
+0 w
+s
+/F0 12 Tf
+0 0 0 rg
+BT
+73 546.8 Td
+(Consultorio 2) Tj
+ET
+0 0 0 rg
+BT
+193 546.8 Td
+(Edificio Principal, Planta Baja) Tj
+ET
+0 0 0 rg
+BT
+393 546.8 Td
+(Consultas a niños) Tj
+ET
+0 0 0 rg
+BT
+73 506.8 Td
+(Consultorio 1) Tj
+ET
+0 0 0 rg
+BT
+193 506.8 Td
+(Edificio Principal, Planta Baja) Tj
+ET
+0 0 0 rg
+BT
+393 506.8 Td
+(consultas generales) Tj
+ET
+0 0 0 rg
+BT
+73 466.8 Td
+(Consultorio 5) Tj
+ET
+0 0 0 rg
+BT
+193 466.8 Td
+(Edificio 6) Tj
+ET
+0 0 0 rg
+BT
+393 466.8 Td
+(Se toma la presion) Tj
+ET
+
+endstream
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+/BaseFont /Helvetica
+/Name /F0
+>>
+endobj
+xref
+0 7
+0000000000 65535 f
+0000000011 00000 n
+0000000111 00000 n
+0000000296 00000 n
+0000000361 00000 n
+0000000550 00000 n
+0000001370 00000 n
+trailer
+<<
+/Size 7
+/Root 1 0 R
+/Info 2 0 R
+>>
+startxref
+1516
+%%EOF
