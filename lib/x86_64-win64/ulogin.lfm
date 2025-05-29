@@ -1,0 +1,106 @@
+object Login: TLogin
+  Left = 656
+  Height = 448
+  Top = 318
+  Width = 628
+  Caption = 'Login'
+  ClientHeight = 448
+  ClientWidth = 628
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '3.2.0.0'
+  object Image1: TImage
+    Left = 20
+    Height = 250
+    Top = 100
+    Width = 250
+  end
+  object Panel1: TPanel
+    Left = 300
+    Height = 282
+    Top = 90
+    Width = 310
+    ClientHeight = 282
+    ClientWidth = 310
+    Color = 6382365
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 40
+      Height = 28
+      Top = 40
+      Width = 72
+      Caption = 'Usuario'
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -20
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object eUsuario: TEdit
+      Left = 40
+      Height = 28
+      Top = 70
+      Width = 230
+      TabOrder = 0
+    end
+    object eContrasena: TEdit
+      Left = 40
+      Height = 28
+      Top = 170
+      Width = 230
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 40
+      Height = 28
+      Top = 140
+      Width = 106
+      Caption = 'Contraseña'
+      Color = clOlive
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -20
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object INGRESAR: TPanel
+      Left = 104
+      Height = 39
+      Top = 224
+      Width = 98
+      Caption = 'INGRESAR'
+      Color = clBlack
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentBackground = False
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+      OnClick = INGRESARClick
+    end
+  end
+  object Label2: TLabel
+    Left = 80
+    Height = 35
+    Top = 40
+    Width = 485
+    Caption = 'BIENVENIDO A LA AGENDA CINA'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -30
+    Font.Name = 'DejaVu Sans Condensed'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+end

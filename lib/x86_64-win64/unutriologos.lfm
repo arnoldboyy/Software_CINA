@@ -1,0 +1,373 @@
+object frmNutriologos: TfrmNutriologos
+  Left = 544
+  Height = 783
+  Top = 142
+  Width = 981
+  Caption = 'Nutriologos'
+  ClientHeight = 783
+  ClientWidth = 981
+  Color = clSilver
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '3.2.0.0'
+  object Label2: TLabel
+    Left = 200
+    Height = 28
+    Top = 336
+    Width = 86
+    Caption = 'Matricula:'
+    Color = clNavy
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 200
+    Height = 28
+    Top = 408
+    Width = 77
+    Caption = 'Nombre:'
+    Color = clNavy
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 200
+    Height = 28
+    Top = 488
+    Width = 60
+    Caption = 'Grupo:'
+    Color = clNavy
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 200
+    Height = 28
+    Top = 568
+    Width = 216
+    Caption = 'FechaNac (dia/mes/año):'
+    Color = clNavy
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label5Click
+  end
+  object lblConectar: TLabel
+    Left = 880
+    Height = 20
+    Top = 90
+    Width = 86
+    Caption = 'Sin Conexion'
+  end
+  object eDBfechaNac: TDBEdit
+    Left = 200
+    Height = 33
+    Top = 608
+    Width = 394
+    Alignment = taCenter
+    Color = clInactiveCaption
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 0
+  end
+  object eDBGrupo: TDBEdit
+    Left = 200
+    Height = 33
+    Top = 520
+    Width = 394
+    Alignment = taCenter
+    Color = clInactiveCaption
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 1
+  end
+  object PRPage1: TPRPage
+    Left = 56
+    Height = 750
+    Top = 720
+    Width = 750
+    MarginTop = 32
+    MarginLeft = 32
+    MarginRight = 32
+    MarginBottom = 32
+    Visible = False
+    object panelReport: TPRLayoutPanel
+      Left = 33
+      Height = 684
+      Top = 33
+      Width = 684
+      Align = alClient
+      object PRLabel1: TPRLabel
+        Left = 96
+        Height = 38
+        Top = 24
+        Width = 451
+        FontName = fnArial
+        FontSize = 28
+        Caption = 'LISTA DE NUTRIOLOGOS'
+        Alignment = taCenter
+      end
+      object PRLabel2: TPRLabel
+        Left = 40
+        Height = 38
+        Top = 100
+        Width = 125
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Matricula'
+      end
+      object PRLabel3: TPRLabel
+        Left = 190
+        Height = 38
+        Top = 100
+        Width = 125
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Nombre'
+      end
+      object PRLabel4: TPRLabel
+        Left = 350
+        Height = 38
+        Top = 100
+        Width = 66
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Fecha Nac'
+      end
+      object PRLabel5: TPRLabel
+        Left = 500
+        Height = 38
+        Top = 100
+        Width = 54
+        FontName = fnArial
+        FontSize = 13
+        Caption = 'Grupo'
+      end
+      object PRRect1: TPRRect
+        Left = 32
+        Height = 40
+        Top = 89
+        Width = 600
+        LineStyle = psinsideFrame
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = -28
+    Height = 72
+    Top = 0
+    Width = 1008
+    Caption = 'NUTRIOLOGOS'
+    Color = 6382365
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -58
+    Font.Name = 'Impact'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Buscar: TPanel
+    Left = 32
+    Height = 42
+    Top = 153
+    Width = 186
+    Caption = 'Buscar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    OnClick = BuscarClick
+  end
+  object Altas: TPanel
+    Left = 264
+    Height = 44
+    Top = 153
+    Width = 172
+    Caption = 'Altas'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 5
+    OnClick = AltasClick
+  end
+  object Panel1: TPanel
+    Left = 488
+    Height = 45
+    Top = 152
+    Width = 168
+    Caption = 'Modificar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 6
+    OnClick = Panel1Click
+  end
+  object Panel3: TPanel
+    Left = 696
+    Height = 42
+    Top = 155
+    Width = 165
+    Caption = 'Eliminar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 7
+    OnClick = Panel3Click
+  end
+  object Panel5: TPanel
+    Left = 683
+    Height = 40
+    Top = 272
+    Width = 162
+    Caption = 'Exportar'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 8
+    OnClick = Panel5Click
+  end
+  object eDBNombre: TDBMemo
+    Left = 200
+    Height = 40
+    Top = 440
+    Width = 392
+    Color = clInactiveCaption
+    TabOrder = 9
+  end
+  object eDBMatricula: TDBEdit
+    Left = 200
+    Height = 36
+    Top = 368
+    Width = 394
+    Alignment = taCenter
+    Color = clInactiveCaption
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 10
+    OnChange = eDBMatriculaChange
+  end
+  object btnNext: TImage
+    Left = 648
+    Height = 77
+    Top = 456
+    Width = 72
+    OnClick = btnNextClick
+  end
+  object btnFormer: TImage
+    Left = 56
+    Height = 72
+    Top = 461
+    Width = 80
+    OnClick = btnFormerClick
+  end
+  object Panel4: TPanel
+    Left = 352
+    Height = 40
+    Top = 672
+    Width = 168
+    BevelColor = clWhite
+    Caption = 'SALIR'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 11
+    OnClick = Panel4Click
+  end
+  object Transacion: TSQLTransaction
+    Active = False
+    Left = 920
+    Top = 530
+  end
+  object DataSource1: TDataSource
+    DataSet = Query
+    Left = 920
+    Top = 270
+  end
+  object Query: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 920
+    Top = 350
+  end
+  object impresora: TPReport
+    FileName = 'default.pdf'
+    CreationDate = 45402.8013989352
+    UseOutlines = False
+    ViewerPreference = []
+    Left = 920
+    Top = 610
+  end
+  object Connection: TMySQL57Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    SkipLibraryVersionCheck = False
+    Left = 914
+    Top = 446
+  end
+end
